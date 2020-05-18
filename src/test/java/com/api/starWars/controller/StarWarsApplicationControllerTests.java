@@ -54,7 +54,7 @@ public class StarWarsApplicationControllerTests {
 	}
 
 	@Test
-	public void testCreateAPlanet() {
+	public void testMockCreateAPlanet() {
 		String endPoint = RouterUtil.PLANETAS;
 
 		given()
@@ -68,7 +68,20 @@ public class StarWarsApplicationControllerTests {
 	}
 
 	@Test
-	public void testListAllPlanets() {
+	public void testMockCreateAPlanetWithoutBody() {
+		String endPoint = RouterUtil.PLANETAS;
+
+		given()
+				.log().all()
+				.contentType(String.valueOf(ContentType.JSON))
+				.when()
+				.post(endPoint)
+				.then()
+				.assertThat().statusCode(400);
+	}
+
+	@Test
+	public void testMockListAllPlanets() {
 		String endPoint = RouterUtil.PLANETAS;
 
 		given()
@@ -81,7 +94,7 @@ public class StarWarsApplicationControllerTests {
 	}
 
 	@Test
-	public void testDeleteAPlanet() {
+	public void testMockDeleteAPlanet() {
 		String endPoint = RouterUtil.PLANETAS + RouterUtil.FIND_BY_ID;
 
 		given()

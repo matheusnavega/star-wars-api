@@ -1,11 +1,10 @@
 package com.api.starWars.api;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@RunWith(MockitoJUnitRunner.class)
+import static io.restassured.RestAssured.given;
+
 @SpringBootTest
 public class StarWarsApplicationAPITests {
 
@@ -14,7 +13,7 @@ public class StarWarsApplicationAPITests {
 	@Test
 	public void checkUrlAPI() {
 
-		io.restassured.RestAssured.given()
+		given()
 				.log().all()
 				.when()
 				.get(URL_API)

@@ -23,6 +23,12 @@ public class Planet {
     public Planet() {
     }
 
+    public Planet(String nome, String clima, String terreno) {
+        this.nome = nome;
+        this.clima = clima;
+        this.terreno = terreno;
+    }
+
     public String getId() {
         return id;
     }
