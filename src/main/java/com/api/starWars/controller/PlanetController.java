@@ -4,7 +4,6 @@ import com.api.starWars.document.Planet;
 import com.api.starWars.dto.EnvelopeResponseDTO;
 import com.api.starWars.dto.PlanetDTO;
 import com.api.starWars.service.PlanetService;
-import com.api.starWars.util.APIUtil;
 import com.api.starWars.util.Messages;
 import com.api.starWars.util.RouterUtil;
 import io.swagger.annotations.ApiOperation;

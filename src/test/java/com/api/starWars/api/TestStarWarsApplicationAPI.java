@@ -5,8 +5,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static io.restassured.RestAssured.given;
 
+/**
+ * Teste usando Rest Assured para validar comunicação com API
+ */
 @SpringBootTest
-public class StarWarsApplicationAPITests {
+public class TestStarWarsApplicationAPI {
 
 	private static final String URL_API = "https://swapi.dev/api/";
 

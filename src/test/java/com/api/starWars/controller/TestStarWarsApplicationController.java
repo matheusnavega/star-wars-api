@@ -2,31 +2,28 @@ package com.api.starWars.controller;
 
 import com.api.starWars.dto.PlanetDTO;
 import com.api.starWars.exception.CustomExceptionHandler;
-import com.api.starWars.repository.PlanetRepository;
 import com.api.starWars.service.PlanetService;
-import com.api.starWars.service.impl.PlanetServiceImpl;
 import com.api.starWars.util.RouterUtil;
 import io.restassured.http.ContentType;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.given;
 
-@RunWith(MockitoJUnitRunner.class)
+/**
+ * Teste usando Rest Assured com objetos mockados para validar os endpoints no controller
+ */
 @SpringBootTest
-public class StarWarsApplicationControllerTests {
+public class TestStarWarsApplicationController {
 
 	private static final String ID = "1";
 	private static final String PLANETA = "Planeta teste";
 	private static final String CLIMA = "Clima teste";
 	private static final String TERRENO = "Terreno teste";
-	private static final String URL_API = "https://swapi.dev/api/";
 
 	@Mock
 	PlanetDTO planetDTO;
@@ -38,15 +35,11 @@ public class StarWarsApplicationControllerTests {
 	PlanetController planetController;
 
 	@Mock
-	private PlanetRepository planetRepository;
-
-	@Mock
 	private CustomExceptionHandler customExceptionHandler;
 
-	@Before
+	@BeforeEach
 	public void initialiseRestAssuredMockMvcStandalone() {
 		RestAssuredMockMvc.standaloneSetup(planetController, customExceptionHandler);
-		planetService = new PlanetServiceImpl(planetRepository);
 		planetDTO = new PlanetDTO(
 				PLANETA,
 				CLIMA,

@@ -11,8 +11,11 @@ import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+/**
+ * Teste usando JUnit5 para validar os servicos
+ */
 @SpringBootTest
-public class StarWarsApplicationServiceTests {
+public class TestStarWarsApplicationService {
 
     private PlanetService planetService;
 
