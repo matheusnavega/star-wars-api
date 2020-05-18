@@ -33,12 +33,12 @@ public class PlanetController {
     @ApiOperation(value = "Método listar os planetas cadastrados")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Existem planetas para listar."),
-            @ApiResponse(code = 206, message = "Lista vazia.")
+            @ApiResponse(code = 204, message = "Lista vazia.")
     })
     public ResponseEntity<List<Planet>> listarTodos() {
         List<Planet> lista = planetService.getAll();
         return ResponseEntity
-                .status(APIUtil.checkQuantityValues(lista) ? HttpStatus.OK : HttpStatus.PARTIAL_CONTENT)
+                .status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(lista);
     }
@@ -83,12 +83,13 @@ public class PlanetController {
     @DeleteMapping(path = RouterUtil.FIND_BY_ID)
     @ApiOperation(value = "Método para deletar um planeta pelo id")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Planeta deletado com sucesso."),
+            @ApiResponse(code = 204, message = "Exclusão bem sucedida."),
             @ApiResponse(code = 404, message = "Não existe planeta com o id passado.")
     })
-    public ResponseEntity<String> remove(@PathVariable(name = "id") String id) {
+    public ResponseEntity<?> remove(@PathVariable(name = "id") String id) {
         this.planetService.removePlanet(id);
-        return ResponseEntity.ok(Messages.DELETE_SUCESS);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(
+                new EnvelopeResponseDTO<>(Messages.DELETE_SUCESS));
     }
 
 }

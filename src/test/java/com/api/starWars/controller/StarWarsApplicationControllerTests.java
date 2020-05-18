@@ -1,4 +1,4 @@
-package com.api.starWars;
+package com.api.starWars.controller;
 
 import com.api.starWars.controller.PlanetController;
 import com.api.starWars.dto.PlanetDTO;
@@ -19,9 +19,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.given;
 
-@RunWith(MockitoJUnitRunner.Silent.class)
+@RunWith(MockitoJUnitRunner.class)
 @SpringBootTest
-public class StarWarsApplicationTests {
+public class StarWarsApplicationControllerTests {
 
 	private static final String ID = "1";
 	private static final String PLANETA = "Planeta teste";
@@ -54,7 +54,7 @@ public class StarWarsApplicationTests {
 				TERRENO);
 	}
 
-	@org.junit.Test
+	@Test
 	public void saveShouldReturnStatus201() { //SAVE
 		String endPoint = RouterUtil.PLANETAS;
 
@@ -68,7 +68,7 @@ public class StarWarsApplicationTests {
 				.assertThat().statusCode(201);
 	}
 
-	@org.junit.Test
+	@Test
 	public void removeShouldReturnStatus200() { //DELETE
 		String endPoint = RouterUtil.PLANETAS + RouterUtil.FIND_BY_ID;
 

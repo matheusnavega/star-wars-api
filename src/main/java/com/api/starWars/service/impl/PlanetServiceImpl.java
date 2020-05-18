@@ -36,7 +36,7 @@ public class PlanetServiceImpl implements PlanetService {
         if (planetaOpt.isPresent()) {
             throw new PlanetExistError();
         }
-        planet.setQtdAparicoesEmFilmes(quantidadeDeAparicoes(planet.getNome()));
+        planet.setQtdAparicoesEmFilmes(getNumberOfAppearances(planet.getNome()));
         return planetRepository.save(planet);
     }
 
@@ -64,7 +64,7 @@ public class PlanetServiceImpl implements PlanetService {
     }
 
     @Override
-    public int quantidadeDeAparicoes(String nome) {
+    public int getNumberOfAppearances(String nome) {
         StarWarsSearchAPIDTO result = starWarsService.buscarDadosStarWarsApi(nome);
         List<StarWarsSearchFilmsAPIDTO> results = result.getResults();
         return results.stream()

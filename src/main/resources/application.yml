@@ -1,0 +1,18 @@
+spring.data.mongodb:
+  #  uri: mongodb://localhost:27017
+  #  database: starwars
+  database: base_matheus
+  uri: mongodb://matheus:matheus123@ds259207.mlab.com:59207/base_matheus
+
+integration:
+  headers:
+    name: user-agent
+    value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+  swapi:
+    planets:
+      https://swapi.dev/api/
+
+spring.jpa:
+  show-sql: true
+  properties.hibernate.show_sql: true
+  properties.hibernate.format_sql: true

@@ -11,21 +11,10 @@ public class StarWarsSearchAPIDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("count")
-    private int count;
-
     @JsonProperty("results")
     private List<StarWarsSearchFilmsAPIDTO> results;
 
     public StarWarsSearchAPIDTO() {
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
     }
 
     public List<StarWarsSearchFilmsAPIDTO> getResults() {
