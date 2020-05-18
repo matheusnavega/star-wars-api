@@ -3,6 +3,9 @@ package com.api.starWars.document;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * Representa um planeta
+ */
 @Document(collection = "planet")
 public class Planet {
 

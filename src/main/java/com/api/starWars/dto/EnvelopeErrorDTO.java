@@ -1,20 +1,35 @@
-package com.api.starWars.exception;
+package com.api.starWars.dto;
 
 import java.io.Serializable;
 
-public class StandardError implements Serializable {
+/**
+ * Representa um envelope para retorno de erros das APIs REST
+ */
+public class EnvelopeErrorDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private int status;
     private String error;
     private String campo;
 
-    public StandardError(int status, String error) {
+
+    /**
+     * Constroi o envelope a partir dos dados informados
+     * @param status status HTTP do retorno
+     * @param error mensagem de erro
+     */
+    public EnvelopeErrorDTO(int status, String error) {
         this.status = status;
         this.error = error;
     }
 
-    public StandardError(int status, String error, String campo) {
+    /**
+     * Constroi o envelope a partir dos dados informados
+     * @param status status HTTP do retorno
+     * @param error mensagem de erro
+     * @param campo campo em que o erro ocorreu
+     */
+    public EnvelopeErrorDTO(int status, String error, String campo) {
         this.status = status;
         this.error = error;
         this.campo = campo;

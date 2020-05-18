@@ -35,7 +35,7 @@ public class PlanetController {
             @ApiResponse(code = 200, message = "Existem planetas para listar."),
             @ApiResponse(code = 204, message = "Lista vazia.")
     })
-    public ResponseEntity<List<Planet>> listarTodos() {
+    public ResponseEntity<List<Planet>> getAll() {
         List<Planet> lista = planetService.getAll();
         return ResponseEntity
                 .status(HttpStatus.OK)

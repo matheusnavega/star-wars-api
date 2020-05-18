@@ -1,8 +1,6 @@
 package com.api.starWars.service.impl;
 
 import com.api.starWars.document.Planet;
-import com.api.starWars.dto.StarWarsSearchAPIDTO;
-import com.api.starWars.dto.StarWarsSearchFilmsAPIDTO;
 import com.api.starWars.exception.NotFoundError;
 import com.api.starWars.exception.PlanetExistError;
 import com.api.starWars.repository.PlanetRepository;
@@ -15,7 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-
+/**
+ * Implementacao dos servicos responsaveis por cadastrar, lista e deletar planetas
+ */
 @Service
 public class PlanetServiceImpl implements PlanetService {
 
@@ -29,6 +29,12 @@ public class PlanetServiceImpl implements PlanetService {
         this.planetRepository = planetRepository;
     }
 
+    /**
+     * Adiciona um planeta
+     * @param planet planeta para ser adicionado
+     * @return O planet adicionado para exibir seus dados em tela
+     * @throws PlanetExistError Se o planeta já existir
+     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public Planet addPlanet(Planet planet) {
@@ -36,41 +42,53 @@ public class PlanetServiceImpl implements PlanetService {
         if (planetaOpt.isPresent()) {
             throw new PlanetExistError();
         }
-        planet.setQtdAparicoesEmFilmes(getNumberOfAppearances(planet.getNome()));
+        planet.setQtdAparicoesEmFilmes(starWarsService.getNumberOfAppearances(planet.getNome()));
         return planetRepository.save(planet);
     }
 
+    /**
+     * Lista todos os planetas
+     * @return Lista de planetas
+     */
     @Override
     public List<Planet> getAll() {
         return planetRepository.findAll();
     }
 
+    /**
+     * Busca planeta pelo id
+     * @param id  id do planeta
+     * @return O planeta encontrado
+     * @throws NotFoundError Se não existir planeta com esse id
+     */
     @Override
     public Planet findById(String id) {
         return planetRepository.findById(id)
                 .orElseThrow(() -> new NotFoundError());
     }
 
+    /**
+     * Busca planeta pelo nome
+     * @param nome  id do planeta
+     * @return O planeta encontrado
+     * @throws NotFoundError Se não existir planeta com esse nome
+     */
     @Override
     public Planet findByName(String nome) {
         return planetRepository.findByNome(nome)
                 .orElseThrow(() -> new NotFoundError());
     }
 
+    /**
+     * Remove planeta pelo id
+     * @param id  id do planeta
+     * @return Planeta deletado
+     * @throws NotFoundError Se não existir planeta com esse id
+     */
     @Override
     public void removePlanet(String id) {
         this.findById(id);
         planetRepository.deleteById(id);
-    }
-
-    @Override
-    public int getNumberOfAppearances(String nome) {
-        StarWarsSearchAPIDTO result = starWarsService.buscarDadosStarWarsApi(nome);
-        List<StarWarsSearchFilmsAPIDTO> results = result.getResults();
-        return results.stream()
-                .filter(res -> res.getNome().equalsIgnoreCase(nome))
-                .mapToInt(res -> res.getFilmes().size())
-                .sum();
     }
 
 }

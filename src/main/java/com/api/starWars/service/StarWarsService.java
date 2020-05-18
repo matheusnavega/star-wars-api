@@ -6,4 +6,6 @@ public interface StarWarsService {
 
     StarWarsSearchAPIDTO buscarDadosStarWarsApi(String nome);
 
+    int getNumberOfAppearances(String nome);
+
 }

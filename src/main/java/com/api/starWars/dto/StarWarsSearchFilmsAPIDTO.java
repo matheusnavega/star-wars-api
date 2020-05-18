@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * Classe para realizar serialização JSON dos dados vindo da API
+ */
 public class StarWarsSearchFilmsAPIDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;

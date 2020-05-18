@@ -1,6 +1,5 @@
 package com.api.starWars.controller;
 
-import com.api.starWars.controller.PlanetController;
 import com.api.starWars.dto.PlanetDTO;
 import com.api.starWars.exception.CustomExceptionHandler;
 import com.api.starWars.repository.PlanetRepository;
@@ -55,7 +54,7 @@ public class StarWarsApplicationControllerTests {
 	}
 
 	@Test
-	public void saveShouldReturnStatus201() { //SAVE
+	public void testCreateAPlanet() {
 		String endPoint = RouterUtil.PLANETAS;
 
 		given()
@@ -69,7 +68,20 @@ public class StarWarsApplicationControllerTests {
 	}
 
 	@Test
-	public void removeShouldReturnStatus200() { //DELETE
+	public void testListAllPlanets() {
+		String endPoint = RouterUtil.PLANETAS;
+
+		given()
+				.log().all()
+				.contentType(String.valueOf(ContentType.JSON))
+				.when()
+				.get(endPoint)
+				.then()
+				.assertThat().statusCode(200);
+	}
+
+	@Test
+	public void testDeleteAPlanet() {
 		String endPoint = RouterUtil.PLANETAS + RouterUtil.FIND_BY_ID;
 
 		given()
@@ -78,18 +90,6 @@ public class StarWarsApplicationControllerTests {
 				.when()
 				.delete(endPoint, ID)
 				.then()
-				.assertThat().statusCode(200);
+				.assertThat().statusCode(204);
 	}
-
-	@Test
-	public void checkUrlAPI() {
-
-		io.restassured.RestAssured.given()
-				.log().all()
-				.when()
-				.get(URL_API)
-				.then()
-				.statusCode(200);
-	}
-
 }

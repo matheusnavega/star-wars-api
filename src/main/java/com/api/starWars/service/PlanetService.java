@@ -15,6 +15,4 @@ public interface PlanetService {
     Planet findByName(String nome);
 
     void removePlanet(String id);
-
-    int getNumberOfAppearances(String nome);
 }

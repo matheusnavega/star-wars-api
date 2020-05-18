@@ -1,5 +1,8 @@
 package com.api.starWars.util;
 
+/**
+ * Constantes para os métodos
+ */
 public class RouterUtil {
 
     public final static String PLANETAS = "/api/planetas";

@@ -1,5 +1,8 @@
 package com.api.starWars.util;
 
+/**
+ * Constantes
+ */
 public class Messages {
 
     public final static String PLANET_NOT_FOUND = "Planeta não encontrado. Verifique se o ID/nome está correto!";

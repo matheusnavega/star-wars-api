@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @RunWith(MockitoJUnitRunner.class)
 @SpringBootTest
-public class StarWarsApplicationControllerAPITests {
+public class StarWarsApplicationAPITests {
 
 	private static final String URL_API = "https://swapi.dev/api/";
 

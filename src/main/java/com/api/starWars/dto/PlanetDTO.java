@@ -7,6 +7,9 @@ import javax.validation.constraints.NotEmpty;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Representa planetDto a ser enviado
+ */
 public class PlanetDTO {
 
     @NotEmpty(message = Messages.REQUIRED_NAME)
@@ -20,9 +23,16 @@ public class PlanetDTO {
 
     private int qtdAparicoesEmFilmes;
 
+    /**
+     * Construtor padrão
+     */
     public PlanetDTO() {
     }
 
+    /**
+     * Constroi a entidade
+     * @param planet {@link Planet}
+     */
     public PlanetDTO(Planet planet) {
         this.nome = planet.getNome();
         this.clima = planet.getClima();
@@ -30,6 +40,9 @@ public class PlanetDTO {
         this.qtdAparicoesEmFilmes = planet.getQtdAparicoesEmFilmes();
     }
 
+    /**
+     * Construtor cheio
+     */
     public PlanetDTO(String nome, String clima, String terreno) {
         this.nome = nome;
         this.clima = clima;
@@ -68,6 +81,11 @@ public class PlanetDTO {
         this.qtdAparicoesEmFilmes = qtdAparicoesEmFilmes;
     }
 
+    /**
+     * Método para converter Planets em PlanetsDTO
+     * @param planets {@link List<Planet>}
+     * @return lista de PlanetDTO
+     */
     public static List<PlanetDTO> fromDto(List<Planet> planets) {
         return planets
                 .stream()
@@ -75,6 +93,11 @@ public class PlanetDTO {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Método para converter PlanetsDTO em Planets
+     * @param dto {@link PlanetDTO}
+     * @return lista de Planet
+     */
     public static Planet toEntity(PlanetDTO dto) {
         Planet p = new Planet();
         p.setNome(dto.getNome());
