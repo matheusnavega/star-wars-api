@@ -14,7 +14,7 @@ Foi utilizado:
 - Possuir o git
 - Possuir o maven
 - Possuir o docker
-    - Caso faça o build direto pela IDE, não é necessário instalar o mongo pois a aplicação acessa um serviço externo)
+    - Caso faça o build direto pela IDE, não é necessário instalar o mongo pois a aplicação acessa um serviço externo
 
 ## Funcionamento
 
