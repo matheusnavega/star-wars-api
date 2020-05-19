@@ -1,0 +1,328 @@
+{
+	"id": "fde0009e-c1a8-4468-b1dc-4e9002141dc1",
+	"name": "API-StarWars",
+	"timestamp": "2020-05-19T01:12:20.032Z",
+	"collection_id": "b957d4a0-0564-4d70-a00b-64d410232036",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 10,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "4a4e4ee2-8cea-4ae4-8830-3abb72c4dbc1",
+			"name": "Cadastrar novo planeta",
+			"url": "localhost:8080/api/planetas/",
+			"time": 948,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code retornado foi 201": true
+			},
+			"testPassFailCounts": {
+				"Status code retornado foi 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				948
+			],
+			"allTests": [
+				{
+					"Status code retornado foi 201": true
+				}
+			]
+		},
+		{
+			"id": "8d516e66-e977-4667-8de2-59a1d26b1c9b",
+			"name": "Cadastrar novo planeta com nome null",
+			"url": "localhost:8080/api/planetas/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code retornado foi 400": true
+			},
+			"testPassFailCounts": {
+				"Status code retornado foi 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code retornado foi 400": true
+				}
+			]
+		},
+		{
+			"id": "56670818-fe9e-43fd-b37e-3fba14333b4d",
+			"name": "Cadastrar novo planeta campos null",
+			"url": "localhost:8080/api/planetas/",
+			"time": 10,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code retornado foi 400": true
+			},
+			"testPassFailCounts": {
+				"Status code retornado foi 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status code retornado foi 400": true
+				}
+			]
+		},
+		{
+			"id": "986e20b5-44a5-4fd0-b73e-2f7d4e309c2c",
+			"name": "Listar todos os planetas",
+			"url": "localhost:8080/api/planetas/",
+			"time": 146,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code retornado foi 200": true
+			},
+			"testPassFailCounts": {
+				"Status code retornado foi 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				146
+			],
+			"allTests": [
+				{
+					"Status code retornado foi 200": true
+				}
+			]
+		},
+		{
+			"id": "16e1a778-2dd1-4413-b349-3585c2846369",
+			"name": "Listar planeta por ID",
+			"url": "localhost:8080/api/planetas/id/5ec2d7b6c1da43446cb83c97",
+			"time": 142,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code retornado foi 200": true
+			},
+			"testPassFailCounts": {
+				"Status code retornado foi 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				142
+			],
+			"allTests": [
+				{
+					"Status code retornado foi 200": true
+				}
+			]
+		},
+		{
+			"id": "8bc27a45-77df-4bf1-a6d2-d0048925825b",
+			"name": "Listar planeta por ID não existente",
+			"url": "localhost:8080/api/planetas/id/nao-existe",
+			"time": 142,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code retornado foi 404": true
+			},
+			"testPassFailCounts": {
+				"Status code retornado foi 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				142
+			],
+			"allTests": [
+				{
+					"Status code retornado foi 404": true
+				}
+			]
+		},
+		{
+			"id": "cd285fc7-6c06-4018-92f7-df0618187cf3",
+			"name": "Listar planeta por nome",
+			"url": "localhost:8080/api/planetas/nome/Dagobah",
+			"time": 144,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code retornado foi 200": true
+			},
+			"testPassFailCounts": {
+				"Status code retornado foi 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				144
+			],
+			"allTests": [
+				{
+					"Status code retornado foi 200": true
+				}
+			]
+		},
+		{
+			"id": "16023656-8408-41e1-b979-1fda681f8b7c",
+			"name": "Listar planeta por nome não existente",
+			"url": "localhost:8080/api/planetas/nome/nao-existe",
+			"time": 143,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code retornado foi 404": true
+			},
+			"testPassFailCounts": {
+				"Status code retornado foi 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				143
+			],
+			"allTests": [
+				{
+					"Status code retornado foi 404": true
+				}
+			]
+		},
+		{
+			"id": "74393d42-649c-4f68-8e8d-e31273f9b66d",
+			"name": "Deletar planeta pelo ID",
+			"url": "localhost:8080/api/planetas/id/5ec3324dc1da4392c42de7ce",
+			"time": 287,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status code retornado foi 204": true
+			},
+			"testPassFailCounts": {
+				"Status code retornado foi 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				287
+			],
+			"allTests": [
+				{
+					"Status code retornado foi 204": true
+				}
+			]
+		},
+		{
+			"id": "bb56f796-c55c-4c70-aa8d-1563cc626c55",
+			"name": "Deletar planeta pelo ID não existente",
+			"url": "localhost:8080/api/planetas/id/nao-existe",
+			"time": 153,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code retornado foi 404": true
+			},
+			"testPassFailCounts": {
+				"Status code retornado foi 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				153
+			],
+			"allTests": [
+				{
+					"Status code retornado foi 404": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 2119,
+	"collection": {
+		"requests": [
+			{
+				"id": "4a4e4ee2-8cea-4ae4-8830-3abb72c4dbc1",
+				"method": "POST"
+			},
+			{
+				"id": "8d516e66-e977-4667-8de2-59a1d26b1c9b",
+				"method": "POST"
+			},
+			{
+				"id": "56670818-fe9e-43fd-b37e-3fba14333b4d",
+				"method": "POST"
+			},
+			{
+				"id": "986e20b5-44a5-4fd0-b73e-2f7d4e309c2c",
+				"method": "GET"
+			},
+			{
+				"id": "16e1a778-2dd1-4413-b349-3585c2846369",
+				"method": "GET"
+			},
+			{
+				"id": "8bc27a45-77df-4bf1-a6d2-d0048925825b",
+				"method": "GET"
+			},
+			{
+				"id": "cd285fc7-6c06-4018-92f7-df0618187cf3",
+				"method": "GET"
+			},
+			{
+				"id": "16023656-8408-41e1-b979-1fda681f8b7c",
+				"method": "GET"
+			},
+			{
+				"id": "74393d42-649c-4f68-8e8d-e31273f9b66d",
+				"method": "DELETE"
+			},
+			{
+				"id": "bb56f796-c55c-4c70-aa8d-1563cc626c55",
+				"method": "DELETE"
+			}
+		]
+	}
+}
