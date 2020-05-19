@@ -4,8 +4,8 @@
   <li><a href="#Sobre">Sobre o projeto</a></li>
   <li><a href="#Tecnologias">Tecnologias utilizadas</a></li>
   <li><a href="#Pre">Pré-requisitos</a></li>
-  <li><a href="#Testes">Testes</a></li>
   <li><a href="#Instalacao">Instalação</a>
+   <li><a href="#Testes">Testes</a></li>
   <li><a href="#Rotas">Rotas</a>
   <li><a href="#Doc">Documentação</a>
  
@@ -33,17 +33,18 @@
 - Possuir o docker
    - Caso faça o build o projeto direto pela IDE, não será necessário instalar o mongo localmente pois o projeto utiliza um serviço externo.
 
-### <a name="Testes">4. Efetuando testes</a>  
-
-&nbsp;&nbsp;&nbsp;&nbsp;Testes
-
-### <a name="Instalacao">5. Instalação</a>
+### <a name="Instalacao">4. Instalação</a>
 
 - Clonar o projeto
 - Em seguida é necessário acessar a pasta do projeto e executar os comandos abaixo:
-    - mvn clean install
-    - docker-compose up
+    - *mvn clean package*
+    - *docker-compose up*
 - Feito isso, o projeto estará rodando em **http://localhost:8080**
+
+### <a name="Testes">5. Efetuando testes</a>  
+
+&nbsp;&nbsp;&nbsp;&nbsp;Ao executar o comando *mvn clean package* na instalação os testes serão executados.
+Para testes nos endpoints, passando pelo Controller, foi utilizado o framework open-souce Rest Assured. Para testar os serviços que acessam o mongodb, foi utilizado JUnit 5. Há também testes no Postman.
 
 ### <a name="Rotas">6. Rotas</a>
 
