@@ -7,7 +7,7 @@
   <li><a href="#Testes">Testes</a></li>
   <li><a href="#Instalacao">Instalação</a>
   <li><a href="#Rotas">Rotas</a>
-  <li><a href="#final">Considerações finais</a>
+  <li><a href="#Doc">Documentação</a>
  
 </ol> 
 
@@ -30,7 +30,8 @@
 
 - Possuir o git
 - Possuir o maven
-- Possuir o docker (caso vá rodar por ele, pois também é possível executar diretamente da IDE visto que o mongodb está em um serviço online)
+- Possuir o docker
+   - Caso faça o build o projeto direto pela IDE, não será necessário instalar o mongo localmente pois o projeto utiliza um serviço externo.
 
 ### <a name="Testes">4. Efetuando testes</a>  
 
@@ -39,10 +40,10 @@
 ### <a name="Instalacao">5. Instalação</a>
 
 - Clonar o projeto
-- Após a clonagem, é necessário acessar a pasta do projeto e executar os comandos abaixo:
+- Em seguida é necessário acessar a pasta do projeto e executar os comandos abaixo:
     - mvn clean install
     - docker-compose up
-- Pronto! O projeto estará rodando no http://localhost:8080
+- Feito isso, o projeto estará rodando em **http://localhost:8080**
 
 ### <a name="Rotas">6. Rotas</a>
 
@@ -53,3 +54,9 @@
 | DELETE     | /api/planetas/id/{id}    | Remove um planeta
 | GET        | /api/planetas/id/{id}    | Busca um planeta por ID
 | GET        | /api/planetas/nome/{nome}| Busca um planeta pelo Nome
+
+### <a name="Doc">6. Documentação</a>
+
+- O projeto foi documentado usando o Swagger, com isso basta acessar **http://localhost:8080/swagger-ui.html#/** para ter acesso aos endpoints.
+
+
