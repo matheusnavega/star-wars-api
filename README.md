@@ -48,7 +48,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;Ao executar o comando *mvn clean package* na instalação os testes serão executados. </br>
 &nbsp;&nbsp;&nbsp;&nbsp;Para testes nos endpoints, passando pelo Controller, foi utilizado o framework open-souce Rest Assured.</br>
 &nbsp;&nbsp;&nbsp;&nbsp;Para testar os serviços que acessam o mongodb, foi utilizado JUnit 5.</br>
-&nbsp;&nbsp;&nbsp;&nbsp;Há também os resultados dos testes no Postman que estão na raiz do projeto. A Collection usado pode ser importada do seguinte endereço: **https://www.postman.com/collections/a64691e4ef1070e3cc17**</br>
+&nbsp;&nbsp;&nbsp;&nbsp;Há também os resultados dos testes no Postman que estão na raiz do projeto. A Collection usada pode ser importada do seguinte endereço: **https://www.postman.com/collections/a64691e4ef1070e3cc17**</br>
 
 ### <a name="Rotas">6. Rotas</a>
 
