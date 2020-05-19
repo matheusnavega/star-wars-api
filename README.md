@@ -58,7 +58,7 @@ Para testes nos endpoints, passando pelo Controller, foi utilizado o framework o
 | GET        | /api/planetas/id/{id}    | Busca um planeta por ID
 | GET        | /api/planetas/nome/{nome}| Busca um planeta pelo Nome
 
-### <a name="Doc">6. Documentação</a>
+### <a name="Doc">7. Documentação</a>
 
 - O projeto foi documentado usando o Swagger, com isso basta acessar **http://localhost:8080/swagger-ui.html#/** para ter acesso aos endpoints.
 
